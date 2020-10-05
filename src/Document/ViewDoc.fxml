@@ -7,30 +7,30 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="220.0" prefWidth="616.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewDocController">
+<AnchorPane prefHeight="250.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewDocController">
    <children>
-      <Button layoutX="337.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#ChangeDocument" prefHeight="53.0" prefWidth="129.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Изменить">
+      <Button layoutX="337.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#ChangeDocument" prefHeight="53.0" prefWidth="145.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Изменить">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="467.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#handleButtonActionDelete" prefHeight="53.0" prefWidth="139.0" style="-fx-border-style: solid; -fx-background-color: #c65555; -fx-border-color: #c65555;" text="Удалить" textFill="WHITE">
+      <Button layoutX="486.0" layoutY="41.0" mnemonicParsing="false" onMouseClicked="#handleButtonActionDelete" prefHeight="53.0" prefWidth="139.0" style="-fx-border-style: solid; -fx-background-color: #c65555; -fx-border-color: #c65555;" text="Удалить" textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="337.0" layoutY="102.0" mnemonicParsing="false" onMouseClicked="#DownloadFile" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Скачать документ">
+      <Button layoutX="337.0" layoutY="102.0" mnemonicParsing="false" onMouseClicked="#DownloadFile" prefHeight="28.0" prefWidth="145.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Скачать документы">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button fx:id="upload" layoutX="468.0" layoutY="102.0" mnemonicParsing="false" onMouseClicked="#UploadFile" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Загрузить документ">
+      <Button fx:id="upload" layoutX="486.0" layoutY="102.0" mnemonicParsing="false" onMouseClicked="#UploadFile" prefHeight="28.0" prefWidth="139.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Загрузить документ">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
@@ -48,7 +48,7 @@
          <font>
             <Font name="Times New Roman Bold" size="14.0" />
          </font></TextArea>
-      <Button fx:id="down" layoutX="339.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#DownloadConfirmFile" prefHeight="26.0" prefWidth="271.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Скачать подтвержденный документ" textFill="#0a0909">
+      <Button fx:id="down" layoutX="338.0" layoutY="167.0" mnemonicParsing="false" onMouseClicked="#DownloadConfirmFile" prefHeight="28.0" prefWidth="289.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Скачать подтвержденный документ" textFill="#0a0909">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -56,14 +56,14 @@
             <Font name="Times New Roman" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="confirm_doc" layoutX="469.0" layoutY="177.0" mnemonicParsing="false" onAction="#Confirm" prefHeight="26.0" prefWidth="139.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Подтвердить">
+      <Button fx:id="confirm_doc" layoutX="486.0" layoutY="195.0" mnemonicParsing="false" onAction="#Confirm" prefHeight="26.0" prefWidth="139.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Подтвердить">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="338.0" layoutY="177.0" mnemonicParsing="false" onAction="#SendMessage" prefHeight="26.0" prefWidth="129.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Переслать">
+      <Button layoutX="338.0" layoutY="195.0" mnemonicParsing="false" onAction="#SendMessage" prefHeight="28.0" prefWidth="145.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Переслать">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
@@ -94,5 +94,13 @@
             <Font name="Times New Roman" size="14.0" />
          </font>
       </Label>
+      <Button layoutX="337.0" layoutY="135.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="289.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Посмотреть документы">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

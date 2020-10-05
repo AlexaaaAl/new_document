@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.ViewDocuments"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="235.0" prefWidth="537.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewDocuments">
+   <children>
+      <Pane prefHeight="34.0" prefWidth="537.0" style="-fx-background-color: linear-gradient(to bottom, #44682d 0%,#87aa5c 100%);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <TableView layoutY="34.0" prefHeight="226.0" prefWidth="336.0">
+        <columns>
+          <TableColumn fx:id="id_file" minWidth="0.0" prefWidth="24.0" text="id" visible="false" />
+          <TableColumn fx:id="name_file" prefWidth="334.0" text="Названия" />
+        </columns>
+      </TableView>
+      <Button layoutX="358.0" layoutY="34.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Добавить">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="358.0" layoutY="67.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Скачать">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="358.0" layoutY="101.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Удалить">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

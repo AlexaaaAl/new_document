@@ -33,7 +33,7 @@
       </TableView>
       <Pane layoutY="32.0" prefHeight="106.0" prefWidth="1135.0" style="-fx-background-color: linear-gradient(to bottom, #44682d 0%,#87aa5c 100%);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
          <children>
-            <Button fx:id="Button" alignment="CENTER_RIGHT" layoutX="346.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="26.0" prefWidth="170.0" text="Создать новый документ">
+            <Button fx:id="Button" alignment="CENTER_RIGHT" layoutX="346.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="26.0" prefWidth="170.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Создать новый документ">
                <padding>
                   <Insets right="10.0" />
                </padding>
@@ -53,22 +53,22 @@
                   <Font name="Times New Roman" size="14.0" />
                </font>
             </Label>
-            <CheckBox fx:id="interna_document" layoutX="547.0" layoutY="11.0" mnemonicParsing="false" text="Регистрация внутренних документов">
+            <CheckBox fx:id="interna_document" layoutX="547.0" layoutY="11.0" mnemonicParsing="false" text="Регистрация внутренних документов" textFill="WHITE">
                <font>
                   <Font name="Times New Roman" size="14.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="incoming_correspondence" layoutX="547.0" layoutY="32.0" mnemonicParsing="false" text="Регистрация входящей корреспонденции">
+            <CheckBox fx:id="incoming_correspondence" layoutX="547.0" layoutY="32.0" mnemonicParsing="false" text="Регистрация входящей корреспонденции" textFill="WHITE">
                <font>
                   <Font name="Times New Roman" size="14.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="incoming_correspondence_moscow" layoutX="547.0" layoutY="53.0" mnemonicParsing="false" text="Регистрация входящей корреспонденции г. Москва">
+            <CheckBox fx:id="incoming_correspondence_moscow" layoutX="547.0" layoutY="53.0" mnemonicParsing="false" text="Регистрация входящей корреспонденции г. Москва" textFill="WHITE">
                <font>
                   <Font name="Times New Roman" size="14.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="orders" layoutX="547.0" layoutY="75.0" mnemonicParsing="false" text="Приказы">
+            <CheckBox fx:id="orders" layoutX="547.0" layoutY="75.0" mnemonicParsing="false" text="Приказы" textFill="WHITE">
                <font>
                   <Font name="Times New Roman" size="14.0" />
                </font>
