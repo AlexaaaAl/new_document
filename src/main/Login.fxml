@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="310.0" prefWidth="418.0" style="-fx-background-color:#ЕСЕСЕС;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+    <children>
+        <TextField fx:id="textEmail" layoutX="212.0" layoutY="72.0" prefHeight="25.0" prefWidth="188.0" promptText="Логин" AnchorPane.bottomAnchor="208.0" AnchorPane.leftAnchor="212.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="72.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+        <PasswordField fx:id="textPassword" layoutX="212.0" layoutY="113.0" prefHeight="25.0" prefWidth="188.0" promptText="Пароль" AnchorPane.bottomAnchor="167.0" AnchorPane.leftAnchor="212.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="113.0">
+         <font>
+            <Font size="14.0" />
+         </font></PasswordField>
+        <Button fx:id="btnSignin" layoutX="212.0" layoutY="191.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="35.0" prefWidth="188.0" style="-fx-background-color: linear-gradient(to bottom, #44682d 0%,#87aa5c 100%);" text="Авторизироваться" textFill="WHITE" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="212.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="191.0">
+            <font>
+                <Font name="Candara" size="14.0" />
+            </font>
+        </Button>
+      <Label fx:id="lblErrors" layoutX="225.0" layoutY="269.0" prefHeight="17.0" prefWidth="179.0" text=")" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="269.0" />
+      <Pane prefHeight="35.0" prefWidth="418.0" style="-fx-background-color: linear-gradient(to bottom, #44682d 0%,#87aa5c 100%);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="150.0" layoutY="8.0" text="АСУП &quot;Алиса&quot;" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ImageView fx:id="image" fitHeight="107.0" fitWidth="111.0" layoutX="58.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="59.0">
+         <image>
+            <Image url="@../image/gerb.gif" />
+         </image>
+      </ImageView>
+      <Label layoutX="14.0" layoutY="165.0" prefHeight="71.0" prefWidth="188.0" text="ФГБУ &quot;Ростовский референтный центр Россельхознадзора&quot;" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="165.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

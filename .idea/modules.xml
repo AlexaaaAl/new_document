@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/new_document.iml" filepath="$PROJECT_DIR$/new_document.iml" />
+      <module fileurl="file://$PROJECT_DIR$/document_circulation.iml" filepath="$PROJECT_DIR$/document_circulation.iml" />
     </modules>
   </component>
 </project>

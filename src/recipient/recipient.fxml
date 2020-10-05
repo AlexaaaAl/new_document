@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="237.0" prefWidth="369.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recipient.Recipient">
+   <children>
+      <ListView fx:id="listv" layoutY="27.0" prefHeight="210.0" prefWidth="217.0" />
+      <ChoiceBox fx:id="choise" layoutY="2.0" prefHeight="25.0" prefWidth="217.0" />
+      <Button fx:id="add" layoutX="224.0" layoutY="2.0" mnemonicParsing="false" onAction="#AddRecip" text="Добавить получателя" />
+      <Button fx:id="delete" layoutX="224.0" layoutY="38.0" mnemonicParsing="false" onAction="#DeleteRecip" prefHeight="25.0" prefWidth="135.0" text="Удалить получателя" />
+      <Button layoutX="292.0" layoutY="192.0" mnemonicParsing="false" text="Добавить" />
+   </children>
+</AnchorPane>

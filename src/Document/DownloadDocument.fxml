@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="207.0" prefWidth="505.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DownloadDocument">
+   <children>
+      <TextField fx:id="pathSave" layoutX="60.0" layoutY="86.0" prefHeight="25.0" prefWidth="262.0" promptText="Папка для сохранения" />
+      <Button layoutX="357.0" layoutY="86.0" mnemonicParsing="false" onMouseClicked="#ChoosePath" prefHeight="25.0" prefWidth="134.0" text="Выбрать папку" />
+      <Button layoutX="60.0" layoutY="151.0" mnemonicParsing="false" onMouseClicked="#DownloadFile" prefHeight="25.0" prefWidth="172.0" text="Скачать" />
+      <Pane layoutY="-1.0" prefHeight="36.0" prefWidth="505.0" style="-fx-background-color: linear-gradient(to bottom, #44682d 0%,#87aa5c 100%);;" />
+   </children>
+</AnchorPane>

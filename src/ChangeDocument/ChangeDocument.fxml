@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="311.0" prefWidth="573.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChangeDocumentController">
+   <children>
+      <TextField fx:id="document" disable="true" layoutX="161.0" layoutY="77.0" prefHeight="25.0" prefWidth="250.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="162.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></TextField>
+      <Label layoutX="38.0" layoutY="83.0" text="Документ:" AnchorPane.leftAnchor="38.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Label>
+      <Label prefHeight="25.0" prefWidth="599.0" style="-fx-background-color: linear-gradient(to bottom, #44682d 0%,#87aa5c 100%);" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Label>
+      <Label layoutX="37.0" layoutY="127.0" text="Дата:" AnchorPane.leftAnchor="37.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Label>
+      <DatePicker fx:id="date" layoutX="161.0" layoutY="121.0" prefHeight="25.0" prefWidth="250.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="162.0" />
+      <Label layoutX="40.0" layoutY="166.0" text="Описание:" AnchorPane.leftAnchor="40.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Label>
+      <TextArea fx:id="comments" layoutX="162.0" layoutY="166.0" prefHeight="132.0" prefWidth="250.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" AnchorPane.leftAnchor="162.0" AnchorPane.rightAnchor="161.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></TextArea>
+      <Button fx:id="choose_doc" layoutX="424.0" layoutY="77.0" mnemonicParsing="false" onMouseClicked="#ButtonActionChoose" prefHeight="26.0" prefWidth="141.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Выбрать Документ" AnchorPane.rightAnchor="8.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Button>
+      <CheckBox fx:id="chdate" layoutX="427.0" layoutY="126.0" mnemonicParsing="false" AnchorPane.rightAnchor="125.0" />
+      <Label layoutX="40.0" layoutY="42.0" text="Название:" AnchorPane.leftAnchor="40.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Label>
+      <TextField fx:id="outline" layoutX="161.0" layoutY="36.0" prefHeight="25.0" prefWidth="250.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="162.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></TextField>
+      <Button fx:id="btnSave" layoutX="437.0" layoutY="261.0" mnemonicParsing="false" onMouseClicked="#SaveAction" prefHeight="34.0" prefWidth="115.0" style="-fx-border-style: solid; -fx-border-color: #87aa5c; -fx-background-color: #87aa5c;" text="Сохранить" textFill="#fff6f6" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="437.0" AnchorPane.rightAnchor="21.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Button>
+      <TextField fx:id="path_doc" disable="true" editable="false" layoutX="161.0" layoutY="264.0" opacity="0.0" prefHeight="25.0" prefWidth="250.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></TextField>
+      <Label layoutX="18.0" layoutY="42.0" text="Папка" textFill="#ffffff00">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

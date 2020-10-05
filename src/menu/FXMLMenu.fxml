@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="612.0" prefWidth="1187.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLMenuController">
+   <children>
+      <TableView fx:id="tblData" layoutY="138.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#handleButtonActionChange" prefHeight="474.0" prefWidth="1187.0" style="-fx-background-color: #dae9f2;" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="138.0">
+        <columns>
+
+           <TableColumn fx:id="tblNumber" prefWidth="72.0" style="-fx-alignment: CENTER;" text="Номер" />
+           <TableColumn fx:id="tblComments" prefWidth="198.0" style="-fx-alignment: CENTER;" text="Название" />
+            <TableColumn fx:id="tblDateAdded" prefWidth="111.0" style="-fx-alignment: CENTER;" text="Дата добавления" />
+           <TableColumn fx:id="tblSender" prefWidth="257.0" style="-fx-alignment: CENTER;" text="Отправитель" />
+           <TableColumn fx:id="tblRecipient" prefWidth="168.0" style="-fx-alignment: CENTER;" text="Получатель" />
+           <TableColumn fx:id="tblStatus" prefWidth="158.0" style="-fx-alignment: CENTER;" text="Статус" />
+           <TableColumn fx:id="tblDate" prefWidth="217.0" style="-fx-alignment: CENTER;" text="Дата реализации" />
+           <TableColumn fx:id="tblDocument" minWidth="3.0" prefWidth="133.0" style="-fx-alignment: CENTER;" text="Документ" visible="false" />
+        </columns>
+      </TableView>
+      <Pane layoutY="32.0" prefHeight="106.0" prefWidth="1135.0" style="-fx-background-color: linear-gradient(to bottom, #44682d 0%,#87aa5c 100%);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+         <children>
+            <Button fx:id="Button" alignment="CENTER_RIGHT" layoutX="346.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="26.0" prefWidth="170.0" text="Создать новый документ">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font></Button>
+            <TextField fx:id="numberDoc" layoutX="87.0" layoutY="11.0" onInputMethodTextChanged="#handleButtonActionFilter" onMouseClicked="#handleButtonActionFilter" prefHeight="25.0" prefWidth="227.0" style="-fx-border-radius: 0 0 0 0;">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font></TextField>
+            <Label layoutX="14.0" layoutY="14.0" text="Поиск" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="login" layoutX="976.0" layoutY="27.0" text="LoginName" textFill="TRANSPARENT">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="interna_document" layoutX="547.0" layoutY="11.0" mnemonicParsing="false" text="Регистрация внутренних документов">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="incoming_correspondence" layoutX="547.0" layoutY="32.0" mnemonicParsing="false" text="Регистрация входящей корреспонденции">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="incoming_correspondence_moscow" layoutX="547.0" layoutY="53.0" mnemonicParsing="false" text="Регистрация входящей корреспонденции г. Москва">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="orders" layoutX="547.0" layoutY="75.0" mnemonicParsing="false" text="Приказы">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </CheckBox>
+         </children>
+      </Pane>
+      <MenuBar layoutY="2.0" style="-fx-background-color: #E5E5E5;">
+        <menus>
+          <Menu mnemonicParsing="false" style="-fx-font-size: 14px; -fx-font-family: times new roman;" text="Фаил">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-font-size: 14px; -fx-font-family: times new roman;" text="Создать новый документ" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" style="-fx-font-size: 14px; -fx-font-family: times new roman;" text="Действия">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#AddUser" style="-fx-font-size: 14px; -fx-font-family: times new roman;" text="Добавить пользователя" />
+                <MenuItem mnemonicParsing="false" onAction="#GoOut" style="-fx-font-size: 14px; -fx-font-family: times new roman;" text="Выход" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" style="-fx-font-size: 14px; -fx-font-family: times new roman;" text="Помощь">
+            <items>
+              <MenuItem mnemonicParsing="false" style="-fx-font-size: 14px; -fx-font-family: times new roman;" text="About" />
+              <MenuItem mnemonicParsing="false" style="-fx-font-size: 14px; -fx-font-family: times new roman;" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="865.0" layoutY="6.0" text="Добро пожаловать," AnchorPane.rightAnchor="152.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+         <padding>
+            <Insets right="3.0" />
+         </padding>
+      </Label>
+      <Label fx:id="login1" layoutX="983.0" layoutY="6.0" text="LoginName" AnchorPane.rightAnchor="85.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Label>
+
+   </children>
+   <effect>
+      <Blend />
+   </effect>
+</AnchorPane>
