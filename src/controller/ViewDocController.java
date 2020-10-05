@@ -30,7 +30,7 @@ import javax.mail.internet.MimeMessage;*/
 
 public class ViewDocController {
     @FXML
-    private Label idD; //d окумента
+    private Label idD; //id документа
     @FXML
     private Label numb; //номер документа
     @FXML
@@ -45,6 +45,8 @@ public class ViewDocController {
     private Button upload; //кнопка "скачать потдтвержденный докумен
     @FXML
     private Button confirm_doc;
+    @FXML
+    private Button view_file;
 
     Connection connection;
     private ObservableList<Document> data;
@@ -152,7 +154,6 @@ public class ViewDocController {
     //изменить документ
     public void ChangeDocument(MouseEvent event) throws IOException {
         int id=Integer.parseInt(idD.getText());
-       
         Stage stage=new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ChangeDocument/ChangeDocument.fxml"));
         Parent root = loader.load();
@@ -162,8 +163,31 @@ public class ViewDocController {
         stage.setScene(scene);
         stage.setTitle("Изменить документ");
         stage.show();
+    }
+    //показать файлы
+    public void ViewFile(MouseEvent event) throws IOException {
+        //int id=Integer.parseInt(idD.getText());
+        try {
+            //добавление в документ id doc и id user
+            PrintWriter writers = new PrintWriter("numb.txt", "UTF-8");
+            writers.println(numb.getText());
+            writers.close();
+        }
+        catch (IOException exception){
+            System.err.println(exception.getMessage());
+        }
+        Stage stage=new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Document/ViewDocuments.fxml"));
+        Parent root = loader.load();
+        //ViewDocuments controllerEditBook = loader.getController(); //получаем контроллер для второй формы
+        //controllerEditBook.setNumb(Integer.parseInt(numb.getText())); // передаем необходимые параметры
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Просмотр файлов");
+        stage.show();
 
     }
+
     //скачать документ
     public void DownloadFile(MouseEvent event) throws IOException {
         Stage stage=new Stage();

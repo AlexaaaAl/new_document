@@ -71,7 +71,7 @@
             <Cursor fx:constant="HAND" />
          </cursor></Button>
       <Label fx:id="idD" layoutX="27.0" layoutY="23.0" text="Label" textFill="TRANSPARENT" />
-      <Pane layoutY="-2.0" prefHeight="25.0" prefWidth="616.0" style="-fx-background-color: linear-gradient(to bottom, #44682d 0%,#87aa5c 100%);;">
+      <Pane layoutY="-2.0" prefHeight="25.0" prefWidth="639.0" style="-fx-background-color: linear-gradient(to bottom, #44682d 0%,#87aa5c 100%);;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
          <children>
             <Label fx:id="outline" layoutX="25.0" layoutY="5.0" text="outline" textFill="WHITE">
                <font>
@@ -94,7 +94,7 @@
             <Font name="Times New Roman" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="337.0" layoutY="135.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="289.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Посмотреть документы">
+      <Button fx:id="view_file" layoutX="337.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#ViewFile" prefHeight="28.0" prefWidth="289.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Посмотреть документы">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
