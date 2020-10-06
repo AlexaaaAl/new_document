@@ -57,7 +57,6 @@ public class FXMLMenuController implements Initializable {
     private Button Button;
     @FXML
     private TextField numberDoc;
-
     @FXML
     RadioButton interna_document_rad;
     @FXML

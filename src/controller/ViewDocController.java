@@ -241,7 +241,7 @@ public class ViewDocController {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Удаление файла");
         alert.setHeaderText("Вы точно хотите удалить документ ?");
-        try {
+        /*try {
             ResultSet path_d = connection.prepareStatement("SELECT path From documents where id_document=" +
                     id_document).executeQuery();
             ResultSet doc_d = connection.prepareStatement("SELECT document From documents where id_document=" +
@@ -267,7 +267,7 @@ public class ViewDocController {
             file.delete();
         }catch (SQLException ex){
             System.err.println("E "+ex);
-        }
+        }*/
         Optional<ButtonType> option = alert.showAndWait();
         if (option.get() == null) {
             //this.label.setText("No selection!");

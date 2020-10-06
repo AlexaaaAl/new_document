@@ -2,12 +2,13 @@ package models;
 
 
 public class Documents {
+    private int id;
     private String path;
     private String document;
 
 
-    public Documents(String path, String document) {
-
+    public Documents(int id,String path, String document) {
+        this.id = id;
         this.path=path;
         this.document = document;
 
@@ -15,7 +16,12 @@ public class Documents {
 
     public Documents() {
     }
-
+    public int getId(){
+        return id;
+    }
+    public void setId(int id){
+        this.id=id;
+    }
     //папка
     public String getPath(){
         return path;
