@@ -120,7 +120,7 @@ public class Document {
     //document_type
     public String getDocument_type() {
 
-        return status;
+        return document_type;
     }
 
     public void setDocument_type(String document_type) {

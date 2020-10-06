@@ -95,7 +95,7 @@ public class ChangeDocumentController implements Initializable {
 
             ResultSet rs = connection.createStatement().executeQuery("SELECT doc.id_document,doc.number," +
                     " us.FIRST_NAME , us1.FIRST_NAME," +
-                    " doc.comments,doc.date,doc.status,doc.outline,doc.date_added" +
+                    " doc.comments,doc.date,doc.status,doc.outline,doc.date_added,doc.document_type" +
                     " FROM documents doc" +
                     " INNER JOIN users us" +
                     " on doc.id_sender = us.ID" +
@@ -106,7 +106,8 @@ public class ChangeDocumentController implements Initializable {
                 data.add(new Document(rs.getInt(1), rs.getInt(2),
                         rs.getString(3), rs.getString(4), rs.getString(8),
                         rs.getString(5), rs.getDate(6),
-                        rs.getDate(9), rs.getString(7)));
+                        rs.getDate(9), rs.getString(7),
+                        rs.getString(10)));
             }
             documents = data.get(0);
             document.setText( documents.getDocument());

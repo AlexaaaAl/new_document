@@ -12,21 +12,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import javafx.stage.FileChooser;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import models.Document;
-import org.apache.commons.io.FileUtils;
 import util.ConnectionUtil;
 import java.io.*;
 import java.net.URL;
@@ -37,7 +30,7 @@ import java.util.*;
 
 public class FXMLMenuController implements Initializable {
     @FXML
-    TableView tblData;
+    TableView<Document> tblData;
     @FXML
     private Label login;
     @FXML
@@ -59,13 +52,27 @@ public class FXMLMenuController implements Initializable {
     @FXML
     private TableColumn<Document,String> tblComments;
     @FXML
+    private TableColumn<Document,String> tblTypeDocument;
+    @FXML
     private Button Button;
     @FXML
     private TextField numberDoc;
 
+    @FXML
+    RadioButton interna_document_rad;
+    @FXML
+    RadioButton incoming_correspondence_rad;
+    @FXML
+    RadioButton incoming_correspondence_moscow_rad;
+    @FXML
+    RadioButton orders_rad;
+
     Scene scene;
     int id_user;
-    private ObservableList<Document>data;
+    private ObservableList<Document> data_interna;
+    private ObservableList<Document> data_correspondence;
+    private ObservableList<Document> data_moscow;
+    private ObservableList<Document> data_orders;
     private ObservableList<Document> filteredData = FXCollections.observableArrayList();
     String name= null;
     String server= null;
@@ -76,6 +83,13 @@ public class FXMLMenuController implements Initializable {
     static boolean flag = true; // Можете где-нибудь потом сделать false и остановить поток
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+
+        // Group
+        ToggleGroup group = new ToggleGroup();
+        interna_document_rad.setToggleGroup(group);
+        incoming_correspondence_rad.setToggleGroup(group);
+        incoming_correspondence_moscow_rad.setToggleGroup(group);
+        orders_rad.setToggleGroup(group);
         fetColumnList();
         try {
             File file = new File("output.txt");
@@ -191,10 +205,14 @@ public class FXMLMenuController implements Initializable {
     }
     //заполнение таблицы при запуске программы
     private void fetColumnList() {
+
         try {
-            data=FXCollections.observableArrayList();
+            data_interna=FXCollections.observableArrayList();
+            data_correspondence=FXCollections.observableArrayList();
+            data_moscow=FXCollections.observableArrayList();
+            data_orders=FXCollections.observableArrayList();
             ResultSet rs=connection.createStatement().executeQuery("SELECT doc.id_document,doc.number, us.LAST_NAME , us1.LAST_NAME," +
-                    " doc.comments,doc.date,doc.status,doc.outline,doc.date_added" +
+                    " doc.comments,doc.date,doc.status,doc.outline,doc.date_added,doc.document_type" +
                     " FROM documents doc" +
                     " INNER JOIN users us" +
                     " on doc.id_sender = us.ID" +
@@ -203,11 +221,26 @@ public class FXMLMenuController implements Initializable {
                     "(select id_user from log where login='"+name +"') or  " +
                     "id_recipient=(select id_user from log where login='"+name+"')");
             while (rs.next()) {
-
-                data.add(new Document(rs.getInt(1),rs.getInt(2),
+                if (rs.getString(10).equals("Внутренний документ"))
+                    data_interna.add(new Document(rs.getInt(1),rs.getInt(2),
                         rs.getString(3), rs.getString(4),rs.getString(8),
                         rs.getString(5), rs.getDate(6),
-                        rs.getDate(9), rs.getString(7)/*Date.valueOf(LocalDate.now())*/));
+                        rs.getDate(9), rs.getString(7), rs.getString(10)/*Date.valueOf(LocalDate.now())*/));
+                if (rs.getString(10).equals("Входящая корреспонденция"))
+                    data_correspondence.add(new Document(rs.getInt(1),rs.getInt(2),
+                        rs.getString(3), rs.getString(4),rs.getString(8),
+                        rs.getString(5), rs.getDate(6),
+                        rs.getDate(9), rs.getString(7), rs.getString(10)/*Date.valueOf(LocalDate.now())*/));
+                if (rs.getString(10).equals("Входящей корреспонденция г. Москва"))
+                    data_moscow.add(new Document(rs.getInt(1),rs.getInt(2),
+                        rs.getString(3), rs.getString(4),rs.getString(8),
+                        rs.getString(5), rs.getDate(6),
+                        rs.getDate(9), rs.getString(7), rs.getString(10)/*Date.valueOf(LocalDate.now())*/));
+                if (rs.getString(10).equals("Приказ"))
+                    data_orders.add(new Document(rs.getInt(1),rs.getInt(2),
+                        rs.getString(3), rs.getString(4),rs.getString(8),
+                        rs.getString(5), rs.getDate(6),
+                        rs.getDate(9), rs.getString(7), rs.getString(10)/*Date.valueOf(LocalDate.now())*/));
                 if (rs.getDate(6)!=null){
                     java.util.Date r=rs.getDate(6);
                     java.util.Date now=Date.valueOf(LocalDate.now());
@@ -226,8 +259,16 @@ public class FXMLMenuController implements Initializable {
         tblComments.setCellValueFactory(new PropertyValueFactory("outline"));
         tblStatus.setCellValueFactory(new PropertyValueFactory("status"));
         tblDate.setCellValueFactory(new PropertyValueFactory("date"));
+        tblTypeDocument.setCellValueFactory(new PropertyValueFactory("document_type"));
         tblData.setItems(null);
-        tblData.setItems(data);
+        if (interna_document_rad.isSelected())
+            tblData.setItems(data_interna);
+        if (orders_rad.isSelected())
+            tblData.setItems(data_orders);
+        if (incoming_correspondence_rad.isSelected())
+            tblData.setItems(data_correspondence);
+        if (incoming_correspondence_moscow_rad.isSelected())
+            tblData.setItems(data_moscow);
     }
     //Вызов окна добавления документа
     public void handleButtonAction() {
@@ -289,7 +330,7 @@ public class FXMLMenuController implements Initializable {
         }
     }
     public void handleButtonActionFilter(){
-            addTextFilter(data, numberDoc, tblData);
+            addTextFilter(tblData.getItems(), numberDoc, tblData);
     }
     //фильтрация текста
     public static void addTextFilter(ObservableList<Document> allData,

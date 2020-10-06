@@ -84,7 +84,7 @@ public class ViewDocController {
             data=FXCollections.observableArrayList();
             ResultSet rs=connection.createStatement().executeQuery("SELECT doc.id_document,doc.number," +
                     " us.LAST_NAME , us1.LAST_NAME," +
-                    " doc.outline,doc.comments,doc.date_added,doc.date,doc.status" +
+                    " doc.outline,doc.comments,doc.date_added,doc.date,doc.status,doc.document_type" +
                     " FROM documents doc" +
                     " INNER JOIN users us" +
                     " on doc.id_sender = us.ID" +
@@ -96,7 +96,7 @@ public class ViewDocController {
                         rs.getString(3), rs.getString(4),
                         rs.getString(5), rs.getString(6),
                         rs.getDate(7), rs.getDate(8),
-                        rs.getString(9)));
+                        rs.getString(9), rs.getString(10)));
             }
             document=data.get(0);
             numb.setText(Integer.toString(document.getNumber()));

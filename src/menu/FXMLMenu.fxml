@@ -18,7 +18,7 @@
 
 <AnchorPane prefHeight="612.0" prefWidth="1187.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLMenuController">
    <children>
-      <TableView fx:id="tblData" layoutY="138.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#handleButtonActionChange" prefHeight="474.0" prefWidth="1187.0" style="-fx-background-color: #dae9f2;" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="138.0">
+      <TableView fx:id="tblData" layoutY="127.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#handleButtonActionChange" prefHeight="479.0" prefWidth="1187.0" style="-fx-background-color: #dae9f2;" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="127.0">
         <columns>
 
            <TableColumn fx:id="tblNumber" prefWidth="72.0" style="-fx-alignment: CENTER;" text="Номер" />
@@ -29,9 +29,10 @@
            <TableColumn fx:id="tblStatus" prefWidth="158.0" style="-fx-alignment: CENTER;" text="Статус" />
            <TableColumn fx:id="tblDate" prefWidth="217.0" style="-fx-alignment: CENTER;" text="Дата реализации" />
            <TableColumn fx:id="tblDocument" minWidth="3.0" prefWidth="133.0" style="-fx-alignment: CENTER;" text="Документ" visible="false" />
+            <TableColumn fx:id="tblTypeDocument" editable="false" minWidth="3.0" prefWidth="133.0" sortable="false" style="-fx-alignment: CENTER;" text="Тип документа" visible="false" />
         </columns>
       </TableView>
-      <Pane layoutY="32.0" prefHeight="106.0" prefWidth="1135.0" style="-fx-background-color: linear-gradient(to bottom, #44682d 0%,#87aa5c 100%);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+      <Pane layoutY="32.0" prefHeight="96.0" prefWidth="1187.0" style="-fx-background-color: linear-gradient(to bottom, #44682d 0%,#87aa5c 100%);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
          <children>
             <Button fx:id="Button" alignment="CENTER_RIGHT" layoutX="346.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="26.0" prefWidth="170.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Создать новый документ">
                <padding>
@@ -53,26 +54,22 @@
                   <Font name="Times New Roman" size="14.0" />
                </font>
             </Label>
-            <CheckBox fx:id="interna_document" layoutX="547.0" layoutY="11.0" mnemonicParsing="false" text="Регистрация внутренних документов" textFill="WHITE">
+            <RadioButton fx:id="interna_document_rad" layoutX="530.0" layoutY="11.0" mnemonicParsing="false" selected="true" style="-fx-border-radius: 0;" text="Регистрация внутренних документов" textFill="WHITE">
                <font>
                   <Font name="Times New Roman" size="14.0" />
-               </font>
-            </CheckBox>
-            <CheckBox fx:id="incoming_correspondence" layoutX="547.0" layoutY="32.0" mnemonicParsing="false" text="Регистрация входящей корреспонденции" textFill="WHITE">
+               </font></RadioButton>
+            <RadioButton fx:id="incoming_correspondence_rad" layoutX="530.0" layoutY="31.0" mnemonicParsing="false" text="Регистрация входящей корреспонденции " textFill="WHITE">
                <font>
                   <Font name="Times New Roman" size="14.0" />
-               </font>
-            </CheckBox>
-            <CheckBox fx:id="incoming_correspondence_moscow" layoutX="547.0" layoutY="53.0" mnemonicParsing="false" text="Регистрация входящей корреспонденции г. Москва" textFill="WHITE">
+               </font></RadioButton>
+            <RadioButton fx:id="incoming_correspondence_moscow_rad" layoutX="530.0" layoutY="50.0" mnemonicParsing="false" text="Регистрация входящей корреспонденции г. Москвы" textFill="WHITE">
                <font>
                   <Font name="Times New Roman" size="14.0" />
-               </font>
-            </CheckBox>
-            <CheckBox fx:id="orders" layoutX="547.0" layoutY="75.0" mnemonicParsing="false" text="Приказы" textFill="WHITE">
+               </font></RadioButton>
+            <RadioButton fx:id="orders_rad" layoutX="530.0" layoutY="69.0" mnemonicParsing="false" text="Приказы" textFill="WHITE">
                <font>
                   <Font name="Times New Roman" size="14.0" />
-               </font>
-            </CheckBox>
+               </font></RadioButton>
          </children>
       </Pane>
       <MenuBar layoutY="2.0" style="-fx-background-color: #E5E5E5;">
