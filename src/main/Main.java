@@ -15,7 +15,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));//прогрузка формы
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Алиса");
+        stage.setTitle("АСУП \"Алиса\"");
         stage.getIcons().add(
                 new Image(Main.class.getResourceAsStream( "gerb.gif" )));
         stage.setResizable(false);

@@ -26,8 +26,10 @@ public class ViewDocuments {
     private TableColumn<Documents, String>  id_file;
     @FXML
     private TableColumn<Documents, String>  name_file;
+
     int numb;
     private ObservableList<Documents> data;
+
     Connection connection;
     public void setNumb(int numb){
         this.numb=numb;
@@ -47,18 +49,19 @@ public class ViewDocuments {
         } catch (IOException e) {
             e.printStackTrace();
         }
-       // fetColumnList();
+        fetColumnList();
     }
     private void fetColumnList() {
         try {
             data= FXCollections.observableArrayList();
             ResultSet id_file=connection.createStatement().executeQuery("SELECT id_file FROM all_one WHERE id_doc="+
-                    3);
-            id_file.next();
-            ResultSet rs=connection.createStatement().executeQuery("SELECT id,path,file, " +
-                    " FROM document_file" +
-                    " WHERE id" +id_file.getInt(1));
-            while (rs.next()) {
+                    numb);
+            while ( id_file.next()) {
+
+                ResultSet rs=connection.createStatement().executeQuery("SELECT id,path,file " +
+                        "FROM document_file " +
+                        "WHERE id=" +id_file.getInt(1));
+                rs.next();
                 data.add(new Documents(rs.getString(2), rs.getString(3)));
             }
         } catch (SQLException ex) {

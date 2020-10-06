@@ -57,7 +57,7 @@ public class LoginController implements Initializable {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/menu/FXMLMenu.fxml"));
                     Parent root = loader.load();
                     Scene scene = new Scene(root);//FXMLLoader.load(getClass().getResource("FXMLMenu.fxml"))
-                    stage.setTitle( "Алиса");
+                    stage.setTitle( "АСУП \"Алиса\"");
                     stage.setMaximized(true);
                     stage.setResizable(true);
                     stage.setScene(scene);
