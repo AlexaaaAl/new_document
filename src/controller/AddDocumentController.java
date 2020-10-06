@@ -64,6 +64,8 @@ public class AddDocumentController implements Initializable {
     private TableColumn<Documents,String> tblPath;
     @FXML
     private TableColumn<Documents,String> tblName;
+    @FXML
+    private ChoiceBox document_type;
 
     ObservableList<String> recipient=FXCollections.observableArrayList();
     ObservableList<String> path=FXCollections.observableArrayList();

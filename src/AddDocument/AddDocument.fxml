@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.collections.*?>
 <?import javafx.scene.media.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -7,10 +8,11 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
 
-<AnchorPane prefHeight="511.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddDocumentController">
+<AnchorPane prefHeight="612.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddDocumentController">
    <children>
-      <Label layoutX="15.0" layoutY="238.0" text="Документ(ы):">
+      <Label layoutX="16.0" layoutY="333.0" text="Документ(ы):">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font></Label>
@@ -33,7 +35,7 @@
             <Font name="Times New Roman" size="14.0" />
          </font></Label>
       <TextArea fx:id="comments" depthTest="DISABLE" layoutX="84.0" layoutY="150.0" prefHeight="71.0" prefWidth="396.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" AnchorPane.rightAnchor="407.0" />
-      <Button fx:id="choose_doc" layoutX="110.0" layoutY="232.0" mnemonicParsing="false" onMouseClicked="#ButtonAction" prefHeight="28.0" prefWidth="116.0" style="-fx-border-style: solid; -fx-border-color: #E5E5E5;" text="Выбрать Файл" AnchorPane.rightAnchor="661.0">
+      <Button fx:id="choose_doc" layoutX="111.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#ButtonAction" prefHeight="28.0" prefWidth="116.0" style="-fx-border-style: solid; -fx-border-color: #E5E5E5;" text="Выбрать Файл" AnchorPane.rightAnchor="660.0">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
@@ -73,15 +75,31 @@
             <Font name="Times New Roman" size="14.0" />
          </font>
       </Label>
-      <ListView fx:id="document_name" layoutX="16.0" layoutY="267.0" prefHeight="157.0" prefWidth="250.0" />
-      <ListView fx:id="document_path" layoutX="16.0" layoutY="267.0" prefHeight="157.0" prefWidth="250.0" style="-fx-text-fill: #000000;" />
-      <Button layoutX="344.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#DeleteFile" text="удалить фаил" />
+      <ListView fx:id="document_name" layoutX="25.0" layoutY="441.0" prefHeight="157.0" prefWidth="250.0" />
+      <ListView fx:id="document_path" layoutX="568.0" layoutY="424.0" prefHeight="157.0" prefWidth="250.0" style="-fx-text-fill: #000000;" />
+      <Button layoutX="345.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#DeleteFile" text="удалить фаил" />
       <Label fx:id="yy" layoutX="108.0" layoutY="424.0" text="Label" />
-      <TableView fx:id="tableD" layoutX="293.0" layoutY="267.0" prefHeight="200.0" prefWidth="236.0">
+      <TableView fx:id="tableD" layoutX="306.0" layoutY="380.0" prefHeight="200.0" prefWidth="236.0">
         <columns>
           <TableColumn fx:id="tblPath" prefWidth="75.0" text="Папка" visible="false" />
           <TableColumn fx:id="tblName" prefWidth="234.0" text="Название" />
         </columns>
       </TableView>
+      <Label layoutX="18.0" layoutY="235.0" text="Тип документации:">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="document_type" layoutX="138.0" layoutY="231.0" prefHeight="30.0" prefWidth="344.0" style="-fx-font-family: TRON; -fx-font-size: 14px;" value="Внутренний документ">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Внутренний документ" />
+               <String fx:value="Входящая корреспонденция" />
+               <String fx:value="Входящей корреспонденция г. Москва" />
+               <String fx:value="Приказ" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+
    </children>
 </AnchorPane>
