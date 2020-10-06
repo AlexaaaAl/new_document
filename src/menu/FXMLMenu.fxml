@@ -93,19 +93,26 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Label layoutX="865.0" layoutY="6.0" text="Добро пожаловать," AnchorPane.rightAnchor="152.0">
-         <font>
-            <Font name="Times New Roman" size="14.0" />
-         </font>
-         <padding>
-            <Insets right="3.0" />
-         </padding>
-      </Label>
-      <Label fx:id="login1" layoutX="983.0" layoutY="6.0" text="LoginName" AnchorPane.rightAnchor="85.0">
-         <font>
-            <Font name="Times New Roman" size="14.0" />
-         </font>
-      </Label>
+      <Pane layoutX="859.0" layoutY="2.0" prefHeight="30.0" prefWidth="364.0" AnchorPane.bottomAnchor="580.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+         <children>
+            <Label layoutX="-1.0" layoutY="6.0" text="Добро пожаловать,">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+               <padding>
+                  <Insets right="3.0" />
+               </padding>
+            </Label>
+            <Label fx:id="login1" layoutX="116.0" layoutY="6.0" text="LoginName">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="3.0" />
+               </padding>
+            </Label>
+         </children>
+      </Pane>
 
    </children>
    <effect>

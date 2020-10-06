@@ -10,17 +10,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.collections.FXCollections?>
 
-<AnchorPane prefHeight="612.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddDocumentController">
+<AnchorPane prefHeight="543.0" prefWidth="657.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddDocumentController">
    <children>
-      <Label layoutX="16.0" layoutY="333.0" text="Документ(ы):">
+      <Label layoutX="14.0" layoutY="298.0" text="Документ(ы):">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font></Label>
-      <Label layoutX="512.0" layoutY="34.0" text="Получатель(ли):">
+      <Label layoutX="282.0" layoutY="298.0" text="Получатель(ли):">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font></Label>
-      <ChoiceBox fx:id="user" layoutX="512.0" layoutY="59.0" prefHeight="25.0" prefWidth="200.0" style="-fx-border-style: solid; -fx-border-color: #E5E5E5; -fx-font-size: 14px;" AnchorPane.rightAnchor="175.0">
+      <ChoiceBox fx:id="user" layoutX="280.0" layoutY="325.0" prefHeight="25.0" prefWidth="200.0" style="-fx-border-style: solid; -fx-border-color: #E5E5E5; -fx-font-size: 14px;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ChoiceBox>
@@ -29,41 +29,41 @@
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font></Label>
-      <DatePicker fx:id="date" layoutX="134.0" layoutY="107.0" prefHeight="27.0" prefWidth="317.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" AnchorPane.rightAnchor="436.0" />
+      <DatePicker fx:id="date" layoutX="134.0" layoutY="107.0" prefHeight="27.0" prefWidth="317.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" />
       <Label layoutX="15.0" layoutY="150.0" text="Описание:">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font></Label>
-      <TextArea fx:id="comments" depthTest="DISABLE" layoutX="84.0" layoutY="150.0" prefHeight="71.0" prefWidth="396.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" AnchorPane.rightAnchor="407.0" />
-      <Button fx:id="choose_doc" layoutX="111.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#ButtonAction" prefHeight="28.0" prefWidth="116.0" style="-fx-border-style: solid; -fx-border-color: #E5E5E5;" text="Выбрать Файл" AnchorPane.rightAnchor="660.0">
+      <TextArea fx:id="comments" depthTest="DISABLE" layoutX="134.0" layoutY="142.0" prefHeight="71.0" prefWidth="503.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" />
+      <Button fx:id="choose_doc" layoutX="18.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#ButtonAction" prefHeight="28.0" prefWidth="116.0" style="-fx-border-style: solid; -fx-border-color: #E5E5E5;" text="Выбрать Файл">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <CheckBox fx:id="chdate" layoutX="192.0" layoutY="81.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="14.0" AnchorPane.rightAnchor="674.0" />
+      <CheckBox fx:id="chdate" layoutX="192.0" layoutY="81.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="14.0" />
       <Label layoutX="16.0" layoutY="42.0" text="Название:">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font></Label>
-      <TextField fx:id="outline" layoutX="134.0" layoutY="37.0" prefHeight="27.0" prefWidth="344.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" AnchorPane.rightAnchor="409.0" />
-      <ListView fx:id="list_v" layoutX="512.0" layoutY="102.0" prefHeight="167.0" prefWidth="200.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" />
-      <Button fx:id="add_rec" layoutX="723.0" layoutY="73.0" mnemonicParsing="false" onAction="#AddRec" style="-fx-border-style: solid; -fx-border-color: #E5E5E5;" text="Добавить получателя">
+      <TextField fx:id="outline" layoutX="134.0" layoutY="37.0" prefHeight="27.0" prefWidth="503.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" />
+      <ListView fx:id="list_v" layoutX="280.0" layoutY="358.0" prefHeight="167.0" prefWidth="200.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" />
+      <Button fx:id="add_rec" layoutX="495.0" layoutY="327.0" mnemonicParsing="false" onAction="#AddRec" style="-fx-border-style: solid; -fx-border-color: #E5E5E5;" text="Добавить получателя">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button fx:id="delete_rec" layoutX="723.0" layoutY="106.0" mnemonicParsing="false" onAction="#DeleteRec" prefHeight="28.0" prefWidth="150.0" style="-fx-border-style: solid; -fx-border-color: #E5E5E5;" text="Удалить получателя">
+      <Button fx:id="delete_rec" layoutX="495.0" layoutY="363.0" mnemonicParsing="false" onAction="#DeleteRec" prefHeight="28.0" prefWidth="150.0" style="-fx-border-style: solid; -fx-border-color: #E5E5E5;" text="Удалить получателя">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button fx:id="btnSave" layoutX="723.0" layoutY="221.0" mnemonicParsing="false" onMouseClicked="#SaveAction" prefHeight="34.0" prefWidth="150.0" style="-fx-border-style: solid; -fx-border-color: #87aa5c; -fx-background-color: #87aa5c;" text="Добавить" textFill="#f8f8f8">
+      <Button fx:id="btnSave" layoutX="495.0" layoutY="491.0" mnemonicParsing="false" onMouseClicked="#SaveAction" prefHeight="34.0" prefWidth="150.0" style="-fx-border-style: solid; -fx-border-color: #87aa5c; -fx-background-color: #87aa5c;" text="Добавить" textFill="#f8f8f8">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
@@ -75,22 +75,19 @@
             <Font name="Times New Roman" size="14.0" />
          </font>
       </Label>
-      <ListView fx:id="document_name" layoutX="25.0" layoutY="441.0" prefHeight="157.0" prefWidth="250.0" />
-      <ListView fx:id="document_path" layoutX="568.0" layoutY="424.0" prefHeight="157.0" prefWidth="250.0" style="-fx-text-fill: #000000;" />
-      <Button layoutX="345.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#DeleteFile" text="удалить фаил" />
-      <Label fx:id="yy" layoutX="108.0" layoutY="424.0" text="Label" />
-      <TableView fx:id="tableD" layoutX="306.0" layoutY="380.0" prefHeight="200.0" prefWidth="236.0">
-        <columns>
-          <TableColumn fx:id="tblPath" prefWidth="75.0" text="Папка" visible="false" />
-          <TableColumn fx:id="tblName" prefWidth="234.0" text="Название" />
-        </columns>
-      </TableView>
+      <ListView fx:id="document_name" layoutX="18.0" layoutY="363.0" prefHeight="157.0" prefWidth="250.0" />
+      <ListView fx:id="document_path" layoutX="18.0" layoutY="363.0" opacity="0.0" prefHeight="157.0" prefWidth="250.0" style="-fx-text-fill: #000000;" />
+      <Button layoutX="159.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#DeleteFile" prefHeight="28.0" prefWidth="108.0" style="-fx-border-color: #E6E6E6;" text="Удалить фаил">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Button>
+      <Label fx:id="yy" layoutX="18.0" layoutY="274.0" text="Label" />
       <Label layoutX="18.0" layoutY="235.0" text="Тип документации:">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="document_type" layoutX="138.0" layoutY="231.0" prefHeight="25.0" prefWidth="344.0" style="-fx-font-family: TRON; -fx-font-size: 14px; -fx-border-style: solid; -fx-border-color: #E6E6E6;" value="Внутренний документ">
+      <ChoiceBox fx:id="document_type" layoutX="178.0" layoutY="235.0" prefHeight="32.0" prefWidth="459.0" style="-fx-font-family: TRON; -fx-font-size: 14px; -fx-border-style: solid; -fx-border-color: #E6E6E6;" value="Внутренний документ">
          <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="Внутренний документ" />

@@ -10,6 +10,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import models.Document;
 import models.Documents;
+import util.ConnectionUtil;
 
 import java.io.*;
 import java.sql.Connection;
@@ -31,7 +32,7 @@ public class ViewDocuments {
     public void setNumb(int numb){
         this.numb=numb;
     }
-    public ViewDocuments () {}
+    public ViewDocuments () {connection = ConnectionUtil.connectdb();}
     public void initialize() {
         try {
             File file = new File("numb.txt");
@@ -46,16 +47,17 @@ public class ViewDocuments {
         } catch (IOException e) {
             e.printStackTrace();
         }
+       // fetColumnList();
     }
     private void fetColumnList() {
         try {
             data= FXCollections.observableArrayList();
-            ResultSet id_doc=connection.createStatement().executeQuery("SELECT id_file FROM all_one WHERE id_doc="+
-                    numb);
-            id_doc.next();
+            ResultSet id_file=connection.createStatement().executeQuery("SELECT id_file FROM all_one WHERE id_doc="+
+                    3);
+            id_file.next();
             ResultSet rs=connection.createStatement().executeQuery("SELECT id,path,file, " +
                     " FROM document_file" +
-                    " WHERE id" +id_doc.getInt(1));
+                    " WHERE id" +id_file.getInt(1));
             while (rs.next()) {
                 data.add(new Documents(rs.getString(2), rs.getString(3)));
             }

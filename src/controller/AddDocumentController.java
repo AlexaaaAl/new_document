@@ -285,7 +285,10 @@ public class AddDocumentController implements Initializable {
     }
 
     public void DeleteFile(MouseEvent mouseEvent) {
+        document_name.setOnTouchPressed(document_path.getOnTouchPressed());
+        document_name.setCursor(document_path.getCursor());
         ObservableList<String> u=document_path.getSelectionModel().getSelectedItems();
+        ObservableList<String> r=document_name.getSelectionModel().getSelectedItems();
         /*document_name.set
                 document_path.getEditingIndex();*/
         yy.setText(u.get(0));
