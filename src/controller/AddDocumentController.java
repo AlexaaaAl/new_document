@@ -199,12 +199,13 @@ public class AddDocumentController implements Initializable {
                     LocalDate i = date.getValue();
                     java.sql.Date sqlDate = java.sql.Date.valueOf(i);
                     connection.createStatement().executeUpdate("INSERT INTO `documents`" +
-                            "    ( `number`,`outline`, `id_sender`, `id_recipient`,`date`,`comments`)" +
+                            "    ( `number`,`outline`, `id_sender`, `id_recipient`,`date`,`comments`,`document_type`)" +
                             "    VALUES" +
                             "           (" + numb + ",'" + outline.getText() + "'," +
                             id_user.getInt(1) + "," +
                             id_recip.getInt(1) + ",'" +
-                            sqlDate + "','" + comments.getText() + "')");
+                            sqlDate + "','" + comments.getText()  + "','"+
+                            document_type.getValue().toString()+"')");
                     String[] to = {e_mail.getString(1)};
                     String subject = "Вам отправили документ\n";
                     String body = "Номер документа: "+ Integer.toString(numb);
@@ -212,12 +213,13 @@ public class AddDocumentController implements Initializable {
                     sendFromGMail(from, pass, to, subject, body);
                 } else { //если не выбрали ГАЛАЧКУ то не добавим дату в таблицу
                     connection.createStatement().executeUpdate("INSERT INTO `documents`" +
-                            "    ( `number`,`outline`, `id_sender`, `id_recipient`,`comments`)" +
+                            "    ( `number`,`outline`, `id_sender`, `id_recipient`,`comments`,`document_type`)" +
                             "    VALUES" +
                             "           (" + numb + ",'" + outline.getText() + "'," +
                             id_user.getInt(1) + "," +
                             id_recip.getInt(1) + ",'" +
-                            comments.getText() + "')");
+                            comments.getText() + "','"+
+                            document_type.getValue().toString()+"')");
                     String[] to = {e_mail.getString(1)};
                     String subject = "Вам отправили документ\n";
                     String body = "Номер документа: "+ Integer.toString(numb);

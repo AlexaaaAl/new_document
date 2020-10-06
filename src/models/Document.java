@@ -12,13 +12,14 @@ public class Document {
     private String outline;
     private String comments;
     private String status;
+    private String document_type;
     private Date date;
     private Date date_added;
 
 
 
     public Document(int id_document, int number,/*,String path, /*String document,*/ String id_sender,String id_recipient,
-                    String outline,String comments,Date date,Date date_added, String status) {
+                    String outline,String comments,Date date,Date date_added, String status,String document_type) {
         this.id_document = id_document;
         this.number = number;
         //this.path=path;
@@ -30,6 +31,7 @@ public class Document {
         this.date_added=date_added;
         this.date=date;
         this.status=status;
+        this.document_type=document_type;
     }
 
     public Document() {
@@ -114,6 +116,16 @@ public class Document {
     public void setStatus(String status) {
 
         this.status = status;
+    }
+    //document_type
+    public String getDocument_type() {
+
+        return status;
+    }
+
+    public void setDocument_type(String document_type) {
+
+        this.document_type = document_type;
     }
     //date
     public Date getDate() {

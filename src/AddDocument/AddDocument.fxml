@@ -20,7 +20,7 @@
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font></Label>
-      <ChoiceBox fx:id="user" layoutX="512.0" layoutY="59.0" prefHeight="25.0" prefWidth="200.0" style="-fx-border-style: solid; -fx-border-color: #E5E5E5;" AnchorPane.rightAnchor="175.0">
+      <ChoiceBox fx:id="user" layoutX="512.0" layoutY="59.0" prefHeight="25.0" prefWidth="200.0" style="-fx-border-style: solid; -fx-border-color: #E5E5E5; -fx-font-size: 14px;" AnchorPane.rightAnchor="175.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ChoiceBox>
@@ -48,7 +48,7 @@
             <Font name="Times New Roman" size="14.0" />
          </font></Label>
       <TextField fx:id="outline" layoutX="134.0" layoutY="37.0" prefHeight="27.0" prefWidth="344.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" AnchorPane.rightAnchor="409.0" />
-      <ListView fx:id="list_v" layoutX="512.0" layoutY="89.0" prefHeight="167.0" prefWidth="200.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" />
+      <ListView fx:id="list_v" layoutX="512.0" layoutY="102.0" prefHeight="167.0" prefWidth="200.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" />
       <Button fx:id="add_rec" layoutX="723.0" layoutY="73.0" mnemonicParsing="false" onAction="#AddRec" style="-fx-border-style: solid; -fx-border-color: #E5E5E5;" text="Добавить получателя">
          <font>
             <Font name="Times New Roman" size="14.0" />
@@ -90,7 +90,7 @@
             <Font name="Times New Roman" size="14.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="document_type" layoutX="138.0" layoutY="231.0" prefHeight="30.0" prefWidth="344.0" style="-fx-font-family: TRON; -fx-font-size: 14px;" value="Внутренний документ">
+      <ChoiceBox fx:id="document_type" layoutX="138.0" layoutY="231.0" prefHeight="25.0" prefWidth="344.0" style="-fx-font-family: TRON; -fx-font-size: 14px; -fx-border-style: solid; -fx-border-color: #E6E6E6;" value="Внутренний документ">
          <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="Внутренний документ" />
