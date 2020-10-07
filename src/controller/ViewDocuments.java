@@ -17,6 +17,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import models.Document;
 import models.Documents;
+import org.apache.commons.io.FileUtils;
 import util.ConnectionUtil;
 
 import java.io.*;
@@ -131,15 +132,52 @@ public class ViewDocuments {
             System.err.println("Error!!!!!!!! "+ex);
         }
     }
-    private void showConfirmationAdd(String id,String path,int numb) {
+    private void showConfirmationAdd(String path,String name,int numb) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Добавление файла");
         alert.setHeaderText("Добавить документ ?");
 
+        int id_f=0;
         try {
-            connection.createStatement().executeUpdate("DELETE From document_file where id=" + id);
-        }catch (SQLException ex) {
+            ResultSet id_user = connection.prepareStatement("SELECT DISTINCT(id_sender) from documents WHERE number='" +
+                    numb + "'").executeQuery();
+            id_user.next();
+            //полное имя пользователя
+            ResultSet user_name = connection.prepareStatement("SELECT Last_name,First_name,Middle_name " +
+                    "from users WHERE id=" +
+                    id_user.getInt(1)).executeQuery();
+            user_name.next();
+            //отдел в котором работает пользователь
+            ResultSet DEPARTMENT = connection.prepareStatement("SELECT DEPARTMENT From users where id=" +
+                    id_user.getInt(1)).executeQuery();
+            DEPARTMENT.next();
+            ResultSet id_file=connection.prepareStatement("SELECT max(id) " +
+                    "from document_file;").executeQuery();
+            id_file.next();
+            ResultSet ip_server = connection.prepareStatement("SELECT ip_server From users where id=" +
+                    id_user.getInt(1) ).executeQuery();
+
+            if ( id_file!=null){
+                id_f=id_file.getInt(1)+1;
+            }
+            String input = path+"/"+name; //путь к загружаемому файлу
+            String output = "//" + ip_server.getString(1) + "/Программа/" +
+                    DEPARTMENT.getString(1) + "/" +
+                    user_name.getString(1) + " " +
+                    user_name.getString(2) + " " +
+                    user_name.getString(3) + "/" + LocalDate.now();//папка вывода
+            sendFile(new File(input), new File(output));
+            connection.createStatement().executeUpdate("INSERT INTO `document_file`" +
+                    "    (`id` ,`path`, `file`)" + "    VALUES ("+id_f+",'" + output + "','" + name + "')");
+            connection.createStatement().executeUpdate("INSERT INTO `all_one`" +
+                    "    (`id_doc`, `id_file`)" + "    VALUES ("
+                    + numb +","+id_f+")");
+        }catch (SQLException | IOException ex) {
             System.err.println("Error!!!!!!!! "+ex);
         }
+    }
+    public void sendFile(File input,File output) throws IOException {
+        FileUtils.copyFileToDirectory(input,
+                output);
     }
 }

@@ -152,8 +152,8 @@ public class AddDocumentController implements Initializable {
                     id_user.getInt(1)).executeQuery();
             user_name.next();
             //отдел в котором работает пользователь
-            ResultSet DEPARTMENT = connection.prepareStatement("SELECT DEPARTMENT From users where id='" +
-                    id_user.getInt(1) + "'").executeQuery();
+            ResultSet DEPARTMENT = connection.prepareStatement("SELECT DEPARTMENT From users where id=" +
+                    id_user.getInt(1) ).executeQuery();
             DEPARTMENT.next();
             //занесение данных в базу и в на сервер + отправка уведомления получателю
             int numb = num.getInt(1) + 1;
