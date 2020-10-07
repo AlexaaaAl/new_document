@@ -3,13 +3,17 @@ package controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import models.Document;
 import models.Documents;
@@ -47,8 +51,6 @@ public class ViewDocuments {
             BufferedReader reader = new BufferedReader(fr);
             // считаем сначала первую строку
             numb = Integer.parseInt(reader.readLine());
-
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -92,12 +94,48 @@ public class ViewDocuments {
         //stage.setMaximized(true);
         stage.close();
     }
+    public void AddFile(MouseEvent mouseEvent){
+        FileChooser chooser = new FileChooser();
+        chooser.setTitle("Выбор документа");
+        File file = chooser.showOpenDialog(new Stage());
+        String path =file.getPath();
+        String doc_name =file.getName();
+        showConfirmationAdd(path,doc_name,numb);
+        Node node = (Node) mouseEvent.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        //stage.setMaximized(true);
+        stage.close();
+    }
+    public void DownloadFile(MouseEvent mouseEvent) throws IOException {
+        int row = tblFile.getSelectionModel().getSelectedIndex();
+        Documents document = (Documents) tblFile.getSelectionModel().getSelectedItem();
+        Stage stage=new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Document/DownloadDocument.fxml"));
+        Parent root = loader.load();
+        DownloadDocument controllerEditBook = loader.getController(); //получаем контроллер для второй формы
+        controllerEditBook.setPath(document.getPath()+"/"+document.getDocument()); // передаем необходимые параметры
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Скачать подписанный документ");
+        stage.show();
+    }
     private void showConfirmationDelete(int id,String path) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Удаление файла");
         alert.setHeaderText("Вы точно хотите удалить документ ?");
         File file = new File(path);
         file.delete();
+        try {
+            connection.createStatement().executeUpdate("DELETE From document_file where id=" + id);
+        }catch (SQLException ex) {
+            System.err.println("Error!!!!!!!! "+ex);
+        }
+    }
+    private void showConfirmationAdd(String id,String path,int numb) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Добавление файла");
+        alert.setHeaderText("Добавить документ ?");
+
         try {
             connection.createStatement().executeUpdate("DELETE From document_file where id=" + id);
         }catch (SQLException ex) {

@@ -45,7 +45,7 @@ public class DownloadDocument {
     public void DownloadFile(MouseEvent event ) {
         try {
             FileUtils.copyFileToDirectory(new File(path), new File(file.getAbsolutePath()));
-            infoBox(file.getName(), "Файл был скачан в папку " + path, "Успешно");
+            //infoBox(file.getName(), "Файл был скачан в папку " + path, "Успешно");
         }catch (IOException throwables) {
             System.out.println("Ex "+throwables);
         }

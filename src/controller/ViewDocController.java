@@ -194,7 +194,7 @@ public class ViewDocController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Document/DownloadDocument.fxml"));
         Parent root = loader.load();
         DownloadDocument controllerEditBook = loader.getController(); //получаем контроллер для второй формы
-        controllerEditBook.setPath(document.getPath()+"\\"+document.getDocument()); // передаем необходимые параметры
+        controllerEditBook.setPath(document.getPath()+"/"+document.getDocument()); // передаем необходимые параметры
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Скачать документ");
@@ -221,7 +221,7 @@ public class ViewDocController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Document/DownloadDocument.fxml"));
         Parent root = loader.load();
         DownloadDocument controllerEditBook = loader.getController(); //получаем контроллер для второй формы
-        controllerEditBook.setPath(document_ans.getPath()+"\\"+document_ans.getDocument()); // передаем необходимые параметры
+        controllerEditBook.setPath(document_ans.getPath()+"/"+document_ans.getDocument()); // передаем необходимые параметры
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Скачать подписанный документ");

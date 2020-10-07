@@ -11,7 +11,7 @@ public class ConnectionUtil {
         try{
            /* String url = "jdbc:mysql://localhost:3306/document_circulation?useLegacyDatetimeCode=false&serverTimezone=" +
                     "Europe/Moscow"; //TIMEZONE обязательно!!!!!!!!!!!!!!!!*/
-            String url = "jdbc:mysql://192.168.50.10:3306/document_circulation2?useLegacyDatetimeCode=false&serverTimezone=" +
+            String url = "jdbc:mysql://192.168.50.10:3306/new_document_circulation?useLegacyDatetimeCode=false&serverTimezone=" +
                     "Europe/Moscow";
             String username = "root";
             String password = "password";

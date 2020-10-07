@@ -156,6 +156,7 @@ public class AddDocumentController implements Initializable {
                     id_user.getInt(1) + "'").executeQuery();
             DEPARTMENT.next();
             //занесение данных в базу и в на сервер + отправка уведомления получателю
+            int numb = num.getInt(1) + 1;
             while (!recipient.isEmpty()) {
                 //данные получателя (одного)
                 String r = recipient.get(0);
@@ -170,7 +171,7 @@ public class AddDocumentController implements Initializable {
                 id_recip.next();
                 ip_server.next();
                 //добавляем номер к документу
-                int numb = num.getInt(1) + 1;
+
                 //почта получателя
                 //добавление файла на сервер
                 while(!path.isEmpty()) {
@@ -193,7 +194,7 @@ public class AddDocumentController implements Initializable {
                 }
                /* while(!path_send.isEmpty()){
                     String p=path_send.get(0);
-
+0
                 }*/
                 if (chdate.isSelected() == true) { //если выбрали ГАЛАЧКУ то добавим дату в таблицу
                     LocalDate i = date.getValue();
@@ -231,7 +232,7 @@ public class AddDocumentController implements Initializable {
             while(!id_file_user.isEmpty()){
                 connection.createStatement().executeUpdate("INSERT INTO `all_one`" +
                         "    (`id_doc`, `id_file`)" + "    VALUES ("
-                        + num.getInt(1) +","+id_file_user.get(0)+")");
+                        + numb +","+id_file_user.get(0)+")");
                 id_file_user.remove(0);
             }
             infoBox("Документ добавлен! ",null,"Success" );
