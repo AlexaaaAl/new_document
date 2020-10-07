@@ -30,8 +30,7 @@ import java.time.LocalDate;
 public class ViewDocuments {
     @FXML
     private TableView tblFile;
-    @FXML
-    private Label g;
+
     @FXML
     private TableColumn<Documents, String>  id_file;
     @FXML
@@ -88,7 +87,7 @@ public class ViewDocuments {
         int row = tblFile.getSelectionModel().getSelectedIndex();
         Documents document = (Documents) tblFile.getSelectionModel().getSelectedItem();
         String pathDelete = document.getPath()+"/"+document.getDocument();
-        g.setText(pathDelete);
+
         showConfirmationDelete(document.getId(),pathDelete);
         Node node = (Node) mouseEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();

@@ -17,7 +17,7 @@
           <TableColumn fx:id="name_file" prefWidth="334.0" text="Названия" />
         </columns>
       </TableView>
-      <Button layoutX="358.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#Gui" prefHeight="25.0" prefWidth="171.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Добавить">
+      <Button layoutX="358.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#AddFile" prefHeight="25.0" prefWidth="171.0" style="-fx-border-style: solid; -fx-border-color: #E6E6E6;" text="Добавить">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
@@ -32,6 +32,5 @@
             <Font name="Times New Roman" size="14.0" />
          </font>
       </Button>
-      <Label fx:id="g" layoutX="398.0" layoutY="163.0" text="Label" />
    </children>
 </AnchorPane>
