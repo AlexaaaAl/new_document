@@ -135,7 +135,6 @@ public class ViewDocuments {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Добавление файла");
         alert.setHeaderText("Добавить документ ?");
-
         int id_f=0;
         try {
             ResultSet id_user = connection.prepareStatement("SELECT DISTINCT(id_sender) from documents WHERE number='" +
@@ -155,11 +154,11 @@ public class ViewDocuments {
             id_file.next();
             ResultSet ip_server = connection.prepareStatement("SELECT ip_server From users where id=" +
                     id_user.getInt(1) ).executeQuery();
-
+            ip_server.next();
             if ( id_file!=null){
                 id_f=id_file.getInt(1)+1;
             }
-            String input = path+"/"+name; //путь к загружаемому файлу
+            String input = path; //путь к загружаемому файлу
             String output = "//" + ip_server.getString(1) + "/Программа/" +
                     DEPARTMENT.getString(1) + "/" +
                     user_name.getString(1) + " " +
