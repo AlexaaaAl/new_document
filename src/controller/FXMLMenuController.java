@@ -271,6 +271,24 @@ public class FXMLMenuController implements Initializable {
     }
     //Вызов окна добавления документа
     public void handleButtonAction() {
+        String type ;
+        if (interna_document_rad.isSelected()){
+            type="Внутренний документ";
+        } else if(incoming_correspondence_rad.isSelected()){
+            type="Входящая корреспонденция";
+        }else if(incoming_correspondence_moscow_rad.isSelected()){
+            type="Входящей корреспонденция г. Москва";
+        }else {
+            type="Приказ";
+        }
+        try {
+            PrintWriter writers = new PrintWriter("type.txt", "UTF-8");
+            writers.println(type);
+            writers.close();
+        }
+        catch (IOException exception){
+            System.err.println(exception.getMessage());
+        }
         try {
             Stage stage=new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("/AddDocument/AddDocument.fxml"));

@@ -66,6 +66,13 @@ public class AddDocumentController implements Initializable {
     private TableColumn<Documents,String> tblName;
     @FXML
     private ChoiceBox document_type;
+    String type;
+    private void setType(String type){
+        this.type=type;
+    }
+    private String getType(){
+        return type;
+    }
 
     ObservableList<String> recipient=FXCollections.observableArrayList();
     ObservableList<String> path=FXCollections.observableArrayList();
@@ -89,7 +96,7 @@ public class AddDocumentController implements Initializable {
 
         date.setShowWeekNumbers(true);
        try{
-           File file = new File("output.txt");
+            File file = new File("output.txt");
             FileReader fr = new FileReader(file);
             BufferedReader reader = new BufferedReader(fr);
             // считаем сначала первую строку
@@ -98,12 +105,18 @@ public class AddDocumentController implements Initializable {
             while (line != null) {
                 line = reader.readLine();
             }
+           File type1 = new File("type.txt");
+           FileReader tp = new FileReader(type1);
+           BufferedReader read = new BufferedReader(tp);
+           // считаем сначала первую строку
+           type = reader.readLine();
        } catch (FileNotFoundException fileNotFoundException) {
            fileNotFoundException.printStackTrace();
        } catch (IOException exception) {
            exception.printStackTrace();
        }
        // lbl.setText("line");
+        document_type.setValue(type);
         user.setItems(addColumn());
         date.setValue(LocalDate.now());
         date.setShowWeekNumbers(true);

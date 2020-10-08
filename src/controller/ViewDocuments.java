@@ -30,7 +30,6 @@ import java.time.LocalDate;
 public class ViewDocuments {
     @FXML
     private TableView tblFile;
-
     @FXML
     private TableColumn<Documents, String>  id_file;
     @FXML
