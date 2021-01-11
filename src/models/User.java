@@ -1,7 +1,7 @@
 package models;
 
 import java.sql.Date;
-
+//пользователи
 public class User {
     private String login;
     private int id_user;

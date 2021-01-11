@@ -1,7 +1,7 @@
 package models;
 
 import java.sql.Date;
-
+//класс документ с информацией о папке с документом , отправителем, полусчателем и т.д.
 public class Document {
     private int id_document;
     private int number;

@@ -15,18 +15,24 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import models.Document;
 import util.ConnectionUtil;
+
+import java.awt.*;
 import java.io.*;
 import java.net.URL;
 import java.sql.*;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.List;
 
 public class FXMLMenuController implements Initializable {
     @FXML
@@ -301,6 +307,24 @@ public class FXMLMenuController implements Initializable {
             System.err.println(ex.getMessage());
         }
         fetColumnList();
+
+    }
+    public void QuarantineO(MouseEvent mouse) throws IOException{
+        try {
+            Process p = Runtime.getRuntime().exec("cmd /C:/users/alex/Desktop/pk.mdb ");
+            // если все равно глючит хрень ниже надо раскомментировать
+            p.getInputStream().close();
+            p.getOutputStream().close();
+            p.getErrorStream().close();
+        } catch (java.io.IOException e) {
+            System.out.println("Cannot execute: " );
+        }     
+        Thread.currentThread().interrupt();
+        File file = new File("C:/users/alex/Desktop/pk.mdb ");
+        Desktop desktop = Desktop.getDesktop();
+        try {
+            desktop.open(file);
+        } catch (Exception e1) { }
 
     }
     //изменение строки документа

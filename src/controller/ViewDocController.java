@@ -287,7 +287,7 @@ public class ViewDocController {
 
     public void Confirm(ActionEvent actionEvent) throws SQLException {
         connection.createStatement().executeUpdate("UPDATE documents " +
-                "set status='подтверждено'" +
+                "set status='подписан'" +
                 " where id_document=" + id_document +
                 " AND id_recipient="+id_us);
     }

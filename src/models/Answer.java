@@ -1,7 +1,7 @@
 package models;
 
 import java.sql.Date;
-
+//класс для документа-ответа..
 public class Answer {
     private int id_doc;
     private String path;

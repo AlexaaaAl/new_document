@@ -70,6 +70,7 @@
                <font>
                   <Font name="Times New Roman" size="14.0" />
                </font></RadioButton>
+            <Button fx:id="quarantine" layoutX="346.0" layoutY="56.0" mnemonicParsing="false" onAction="#QuarantineO" prefHeight="25.0" prefWidth="170.0" text="Карантинные объекты" />
          </children>
       </Pane>
       <MenuBar layoutY="2.0" style="-fx-background-color: #E5E5E5;">
